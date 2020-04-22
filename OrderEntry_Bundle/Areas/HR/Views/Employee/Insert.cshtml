@@ -1,0 +1,37 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "Insert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row" style="margin-left:10%;margin-right:10%">
+        <div class="col-md-6">
+
+            <div class="form-group" method="post">
+                <br />
+                <label>Firstname</label>
+                @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+            </div>
+            <div class="form-group" method="post">
+                <br />
+                <label>Lastname</label>
+                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            </div>
+            <div class="form-group" mthod="post">
+                <br />
+                <label>Title</label>
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+            </div>
+            <div class="form-group" method="post">
+                <br />
+                <label>Title of Courtesy</label>
+                @Html.TextBoxFor(x => x.TitleOfCourtesy, new { @class = "form-control" })
+            </div>
+            <button type="submit" class="btn btn-primary">Add Employee</button>
+        </div>
+
+    </div>
+}
+

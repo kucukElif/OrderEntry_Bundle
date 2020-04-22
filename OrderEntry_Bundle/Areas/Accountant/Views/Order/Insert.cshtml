@@ -1,0 +1,48 @@
+﻿@model Order
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+<div class="row" style="margin-left:10%;margin-right:10%">
+    <div class="col-md-6">
+        <div class="form-group" method="post">
+            <br />
+            <label>Order Id</label>
+            @Html.TextBoxFor(x => x.OrderID, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group" method="post">
+            <br />
+            <label>Customer Id</label>
+            @Html.TextBoxFor(x => x.CustomerID, new { @class = "form-control" })
+
+        </div>
+
+        <div class="form-group" method="post">
+            <br />
+            <label>Ship Name</label>
+            @Html.TextBoxFor(x => x.ShipName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group" method="post">
+            <br />
+            <label>Ship City</label>
+            @Html.TextBoxFor(x => x.ShipCity, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group" method="post">
+            <br />
+            <label>Ship Adress</label>
+            @Html.TextBoxFor(x => x.ShipAddress, new { @class = "form-control" })
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Add Order</button>
+    </div>
+</div>
+}
+
+

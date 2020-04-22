@@ -1,0 +1,47 @@
+﻿@model List<Order>
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@using (Html.BeginForm("Orders", "Order", FormMethod.Get))
+{
+    <br />
+    <p><b>Total order :</b>@Html.Label()</p>
+    <br />
+    <p><b>Total profit :</b></p>
+}*@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Oder ID</th>
+            <th>Customer Id</th>
+            <th>Ship Name</th>
+            <th>Ship City</th>
+            <th>Ship Adress </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+        <tr>
+            <td>@order.OrderID</td>
+            <td>@order.CustomerID</td>
+            <td>@order.ShipName</td>
+            <td>@order.ShipCity</td>
+            <td>@order.ShipAddress</td>
+            <td>
+                <a href="/Accountant/Order/Delete/@order.OrderID" class="btn btn-danger">DELETE</a>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+
+<div class="container">
+    <div class="row">
+        <a href="/Accountant/Order/Insert/" class="btn btn-primary">Add Order</a>
+
+        </div>
+</div>
